@@ -4,12 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-
 </head>
-<body>
-<h1>OPAAAA</h1>
-<script src="app.js"></script>
-    
-</body>
+
+
+
+    <body>
+        
+    <form action="form.php" method="post">
+        <input type="text" placeholder="Name" name="username">
+        <input type="password" name="password">
+
+        <br>
+
+        <input type="submit" name="submit">
+    </form>
+
+
+
+
+    </body> 
+
+
 </html>
