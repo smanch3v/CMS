@@ -2,6 +2,7 @@
     include "includes/header.php";
 ?>
 
+    <!--- wrapper -->
     <div id="wrapper">
 
         <?php include "includes/navigation.php"; ?>
