@@ -37,21 +37,31 @@
         echo "<td>$post_tags</td>";
         echo "<td>$post_comment_count</td>";
         echo "<td>$post_date</td>";
+        echo "<td><a href='posts.php?delete=$post_id'>Delete</a></td>";
         echo "</tr>";
     }
     
     
     ?>
-        <tr>
-            <td>10</td>
-            <td>manch3v</td>
-            <td>Bootstrap FM</td>
-            <td>Bootstrap</td>
-            <td>Status</td>
-            <td>Image</td>
-            <td>Tags</td>
-            <td>Comments</td>
-            <td>Date</td>
-        </tr>
+        
     </tbody>
 </table>
+
+<?php
+
+if(isset($_GET['delete'])){
+
+    $post_id = $_GET['delete'];
+
+    $query = "DELETE FROM posts WHERE post_id = '$post_id'";
+    $delete_query = mysqli_query($connection, $query);
+    confirmQuery($delete_query);
+    header("Location: posts.php");
+
+
+}
+
+
+
+
+?>
