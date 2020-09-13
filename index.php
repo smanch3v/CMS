@@ -32,14 +32,8 @@ include "includes/header.php";
                     echo "<h1 class = 'text-center'>No posts</h1>";
 
                 }else{
-
                 
                 ?>
-
-                <h1 class="page-header">
-                    Page Heading
-                    <small>Secondary Text</small>
-                </h1>
 
                 <!-- First Blog Post -->
                 <h2>
@@ -66,9 +60,6 @@ include "includes/header.php";
             
             ?>
                 
-
-            
-
             </div>
 
             <!-- Blog Sidebar Widgets Column -->

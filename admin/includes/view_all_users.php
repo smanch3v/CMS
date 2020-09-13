@@ -62,10 +62,10 @@
 
       
 
-        echo "<td><a href='comments.php?approve='>Approve</a></td>";
-        echo "<td><a href='comments.php?reject='>Reject</a></td>";
-
-        echo "<td><a href='comments.php?delete='>Delete</a></td>";
+        echo "<td><a href='users.php?change_to_admin=$user_id'>Admin</a></td>";
+        echo "<td><a href='users.php?change_to_sub=$user_id'>Subscriber</a></td>";
+        echo "<td><a href='users.php?source=edit_user&edit_user=$user_id'>Edit</a></td>";
+        echo "<td><a href='users.php?delete=$user_id'>Delete</a></td>";
         echo "</tr>";
     }
     
@@ -77,27 +77,27 @@
 
 <?php
 
-if(isset($_GET['approve'])){
+if(isset($_GET['change_to_admin'])){
 
-    $the_comment_id = $_GET['approve'];
+    $the_user_id = $_GET['change_to_admin'];
 
-    $query = "UPDATE comments SET comment_status = 'approved' WHERE comment_id = $the_comment_id";
-    $reject_query = mysqli_query($connection, $query);
-    confirmQuery($reject_query);
-    header("Location: comments.php");
+    $query = "UPDATE users SET user_role = 'admin' WHERE user_id = $the_user_id";
+    $change_to_admin_query = mysqli_query($connection, $query);
+    confirmQuery($change_to_admin_query);
+    header("Location: users.php");
 
 
 }
 
 
-if(isset($_GET['reject'])){
+if(isset($_GET['change_to_sub'])){
 
-    $the_comment_id = $_GET['reject'];
+    $the_user_id = $_GET['change_to_sub'];
 
-    $query = "UPDATE comments SET comment_status = 'rejected' WHERE comment_id = $the_comment_id ";
-    $reject_query = mysqli_query($connection, $query);
-    confirmQuery($reject_query);
-    header("Location: comments.php");
+    $query = "UPDATE users SET user_role = 'subscriber' WHERE user_id = $the_user_id ";
+    $change_to_sub_query = mysqli_query($connection, $query);
+    confirmQuery($change_to_sub_query);
+    header("Location: users.php");
 
 
 }
@@ -105,12 +105,12 @@ if(isset($_GET['reject'])){
 
 if(isset($_GET['delete'])){
 
-    $the_comment_id = $_GET['delete'];
+    $the_user_id = $_GET['delete'];
 
-    $query = "DELETE FROM comments WHERE comment_id = '$the_comment_id'";
-    $delete_query = mysqli_query($connection, $query);
-    confirmQuery($delete_query);
-    header("Location: comments.php");
+    $query = "DELETE FROM users WHERE user_id = '$the_user_id'";
+    $delete_user_query = mysqli_query($connection, $query);
+    confirmQuery($delete_user_query);
+    header("Location: users.php");
 
 }
 

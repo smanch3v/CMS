@@ -31,21 +31,6 @@
         echo "<td>$comment_id</td>";
         echo "<td>$comment_author</td>";
         echo "<td>$comment_content</td>";
-
-
-        // $query = "SELECT * FROM comments WHERE cat_id = $post_category_id";
-        // $select_cat_edit = mysqli_query($connection,$query);
-
-        // while($row = mysqli_fetch_assoc($select_cat_edit)){
-        //     $cat_id = $row['cat_id'];
-        //     $cat_title = $row['cat_title'];
-        // }
-
-        // echo "<td>$cat_title</td>";
-
-
-
-
         echo "<td>$comment_email</td>";
         echo "<td>$comment_status</td>";
 
@@ -59,23 +44,19 @@
             echo "<td><a href='../post.php?p_id=$post_id'>$post_title</a></td>";
 
         }
-    
-
 
         echo "<td>$comment_date</td>";
 
         echo "<td><a href='comments.php?approve=$comment_id'>Approve</a></td>";
         echo "<td><a href='comments.php?reject=$comment_id'>Reject</a></td>";
-
         echo "<td><a href='comments.php?delete=$comment_id'>Delete</a></td>";
         echo "</tr>";
     }
     
-    
-    ?>
-        
+    ?>    
     </tbody>
 </table>
+
 
 <?php
 
@@ -87,8 +68,6 @@ if(isset($_GET['approve'])){
     $reject_query = mysqli_query($connection, $query);
     confirmQuery($reject_query);
     header("Location: comments.php");
-
-
 }
 
 
@@ -100,22 +79,18 @@ if(isset($_GET['reject'])){
     $reject_query = mysqli_query($connection, $query);
     confirmQuery($reject_query);
     header("Location: comments.php");
-
-
 }
 
 
 if(isset($_GET['delete'])){
 
     $the_comment_id = $_GET['delete'];
-
     $query = "DELETE FROM comments WHERE comment_id = '$the_comment_id'";
     $delete_query = mysqli_query($connection, $query);
     confirmQuery($delete_query);
     header("Location: comments.php");
 
 }
-
 
 
 
