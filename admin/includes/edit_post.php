@@ -55,6 +55,8 @@ $query = "SELECT * FROM posts WHERE post_id = '$the_post_id'";
         $update_post = mysqli_query($connection, $query);
     
         confirmQuery($update_post);
+
+        echo "<p class='bg-success'>Post updated. <a href='../post.php?p_id=$post_id'>View Post</a></p>";
     
     }
 

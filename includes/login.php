@@ -33,11 +33,17 @@ if(isset($_POST['login'])) {
         $_SESSION['firstname'] = $db_user_firstname;
         $_SESSION['lastname']  = $db_user_lastname;
         $_SESSION['user_role'] = $db_user_role;
-
-
-        header("Location: ../admin");
+        if($db_user_role == 'admin'){
+            header("Location: ../admin");
+ 
+        }else{
+            header("Location: ../index.php");
+            echo "<p class='bg-success'>Login successful</p>";
+        }
     }else{
+        
         header("Location: ../index.php");
+        echo "<p class='text-danger'>Usernam or password is incorrect</p>";
     }
 
 
