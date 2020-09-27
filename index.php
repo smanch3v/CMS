@@ -44,8 +44,8 @@ include "includes/header.php";
                 </p>
                 <p><span class="glyphicon glyphicon-time"></span> Posted on <?php echo $post_date; ?></p>
                 <hr>
-                <a href="post.php?p_id=<?php echo $post_id; ?>"><?php echo $post_title; ?>
-                <img class="img-responsive" src="http://placehold.it/900x300" alt="">
+                <a href="post.php?p_id=<?php echo $post_id; ?>">
+                <img class="img-responsive" src="<?php echo "images/".$post_image; ?>" alt="">
                 </a>
                 <hr>
                 <p><?php echo $post_content; ?></p>
