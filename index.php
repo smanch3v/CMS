@@ -6,6 +6,58 @@ include "includes/header.php";
     <!-- Navigation -->
     <?php include "includes/navigation.php"; ?>
 
+    <style>
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/slider5.png");
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.hero-text button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  color: black;
+  background-color: #ddd;
+  text-align: center;
+  cursor: pointer;
+}
+
+.hero-text button:hover {
+  background-color: #555;
+  color: white;
+}
+body {
+    padding-top: 0px !important;
+}
+</style>
+<div class="hero-image">
+  <div class="hero-text">
+    <h1 style="font-size:50px">Design and Development of Content Management System</h1>
+    <p>Svetoslav Manchev</p>
+    
+  </div>
+</div>
+<br>
     <!-- Page Content -->
     <div class="container">
 
@@ -40,7 +92,7 @@ include "includes/header.php";
                     <a href="post.php?p_id=<?php echo $post_id; ?>"><?php echo $post_title; ?></a>
                 </h2>
                 <p class="lead">
-                    by <a href="index.php"><?php echo $post_author; ?></a>
+                    <?php echo "by ".$post_author; ?>
                 </p>
                 <p><span class="glyphicon glyphicon-time"></span> Posted on <?php echo $post_date; ?></p>
                 <hr>

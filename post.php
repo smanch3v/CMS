@@ -84,6 +84,7 @@ include "includes/header.php";
 
                 ?>
 
+<?php if(isset($_SESSION['user_role'])){?>
                 <!-- Comments Form -->
                 <div class="well">
                     <h4>Leave a Comment:</h4>
@@ -91,7 +92,7 @@ include "includes/header.php";
 
                         <div class="form-group">
                         <label for="Author">Author</label>
-                            <input type="text" class="form-control" name="comment_author">
+                            <input type="text" class="form-control" name="comment_author" value="<?php echo $_SESSION['username']?>">
                         </div>
 
                         <div class="form-group">
@@ -107,7 +108,7 @@ include "includes/header.php";
                         <button type="submit" name="create_comment" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
-
+<?php }?>
                 <hr>
 
                 <!-- Posted Comments -->
@@ -138,7 +139,7 @@ include "includes/header.php";
                     </a>
                     <div class="media-body">
                         <h4 class="media-heading"><?php echo $comment_author;?>
-                            <small><?php echo $comment_date;?>/small>
+                            <small><?php echo $comment_date;?></small>
                         </h4>
                         <?php echo $comment_content;?>
                     </div>
