@@ -52,7 +52,7 @@ body {
 </style>
 <div class="hero-image">
   <div class="hero-text">
-    <h1 style="font-size:50px">Design and Development of Content Management System</h1>
+    <h1 style="font-size:50px">Design and Development of a Content Management System</h1>
     <p>Svetoslav Manchev</p>
     
   </div>
@@ -79,11 +79,9 @@ body {
                 $post_content = substr($row['post_content'],0,300);
                 $post_status = $row['post_status'];
 
-                if($post_status != 'published'){
+                if($post_status == 'published'){
 
-                    echo "<h1 class = 'text-center'>No posts</h1>";
-
-                }else{
+                 
                 
                 ?>
 
@@ -106,8 +104,8 @@ body {
                 <hr>
 
                 <?php
-                
                 }
+                
             }
             
             ?>

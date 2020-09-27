@@ -16,11 +16,11 @@ include "includes/header.php";
             <div class="col-md-8">
                 
             <?php
-                if(isset($_POST['submit'])){
+                if(isset($_POST['search'])){
                     $search = $_POST['search'];
-                    echo $search; 
+                    echo "<h3 class='alert alert-success'>Reults for: " .$search . "</h3>"; 
                     
-                    $query = "SELECT * FROM posts where post_tags LIKE %$search%";
+                    $query = "SELECT * FROM posts where post_tags LIKE '%$search%'";
                     $search_query = mysqli_query($connection, $query);
                     if(!$search_query){
                         die("Query Failed" . mysqli_error($connection));
@@ -52,7 +52,7 @@ include "includes/header.php";
                             </p>
                             <p><span class="glyphicon glyphicon-time"></span> Posted on <?php echo $post_date; ?></p>
                             <hr>
-                            <img class="img-responsive" src="http://placehold.it/900x300" alt="">
+                            <img class="img-responsive" src="<?php echo "images/".$post_image; ?>" alt="">
                             <hr>
                             <p><?php echo $post_content; ?></p>
                             <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
