@@ -18,7 +18,7 @@ include "includes/header.php";
             <?php
                 if(isset($_POST['search'])){
                     $search = $_POST['search'];
-                    echo "<h3 class='alert alert-success'>Reults for: " .$search . "</h3>"; 
+                    
                     
                     $query = "SELECT * FROM posts where post_tags LIKE '%$search%'";
                     $search_query = mysqli_query($connection, $query);
@@ -27,8 +27,9 @@ include "includes/header.php";
                     }
                     $count = mysqli_num_rows($search_query);
                     if($count == 0){
-                        echo "<h1>No Results</h1>";
+                        echo "<h3 class='alert alert-danger'>Reults for: " .$search . " not found</h3>"; 
                     }else{
+                        echo "<h3 class='alert alert-success'>Reults for: " .$search . "</h3>"; 
             
                         while($row = mysqli_fetch_assoc($search_query)){
                             $post_title = $row['post_title'];

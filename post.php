@@ -132,18 +132,21 @@ include "includes/header.php";
 
                 
 
-
+                if(isset($comment_date) && isset($comment_content) && isset($comment_author)){
                 ?>
+                
                     <a class="pull-left" href="#">
                         <img class="media-object" src="http://placehold.it/64x64" alt="">
                     </a>
                     <div class="media-body">
-                        <h4 class="media-heading"><?php echo $comment_author;?>
-                            <small><?php echo $comment_date;?></small>
+                        <h4 class="media-heading"><?php if(isset($comment_author)){ echo $comment_author;}?>
+                            <small><?php if(isset($comment_date)){echo $comment_date;}?></small>
                         </h4>
-                        <?php echo $comment_content;?>
+                        <?php if(isset($comment_content)){echo $comment_content;}?>
                     </div>
+                    <?php } ?>
                 </div>
+                
 
 
             </div>
