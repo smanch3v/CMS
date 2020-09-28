@@ -56,7 +56,13 @@
 
 
 
-
+                    <li>
+                        <a href='index.php'>Contact</a>
+                    </li>
+                    
+                    <li>
+                    <a href='index.php'>About</a>
+                    </li>
                     
                 </ul>
             </div>

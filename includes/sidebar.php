@@ -33,6 +33,9 @@
     </div>
     </form><!--- search form--->
     <!-- /.input-group -->
+    <br>
+        <p>Don't have an account? <a href="registration.php">Register</a></p>
+    
 </div>
 <?php } ?>
 
